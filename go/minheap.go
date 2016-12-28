@@ -29,7 +29,7 @@ func extract(heap []uint) ([]uint, uint) {
 	cur := 0
 	for cur < len(rheap) {
 		left, right := childIndices(cur)
-		if right < len(rheap) && rheap[right] < rheap[cur] && rheap[right] < rheap[left] {
+		if right < len(rheap) && rheap[right] < rheap[cur] && rheap[right] <= rheap[left] {
 			rheap[right], rheap[cur] = rheap[cur], rheap[right]
 			cur = right
 			continue
