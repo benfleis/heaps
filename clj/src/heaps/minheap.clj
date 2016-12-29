@@ -1,3 +1,5 @@
+(ns heaps.minheap)
+
 (defn insert [heap value]
   (loop [heap  (conj heap value)
          pos   (- (count heap) 1)
@@ -33,5 +35,4 @@
 (extract [0 1 2])
 (loop [heap [0 1 1 3 4 5 2]]
   (let [[head tail] (extract heap)]
-    (println head heap "->" tail)
     (when (seq tail) (recur tail))))
